@@ -46,13 +46,11 @@
 			<groupId>org.primefaces.themes</groupId>
 			<artifactId>afterdark</artifactId>
 			<version>1.0.8</version>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.primefaces.themes</groupId>
 			<artifactId>home</artifactId>
 			<version>1.0.8</version>
-			<scope>runtime</scope>
 		</dependency>
 
 		<!-- JSF 2 -->
