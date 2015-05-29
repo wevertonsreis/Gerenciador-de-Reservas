@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition>
+		<h1 class="titulo">Sistema Gerenciador de Cotação</h1>	
+		<p:menubar autoDisplay="true">
+			<p:menuitem value="Home" url="/sistema/index.xhtml" icon="ui-icon-home"/>
+			<p:submenu label="Cadastro" icon="ui-icon-document">
+				<p:submenu label="Cidade">
+					<p:menuitem value="Nova Cidade" url="/sistema/cadastro/cidade/formularioCidade.xhtml"/>
+					<p:menuitem value="Consultar Cidade" url="/sistema/cadastro/cidade/pesquisaCidade.xhtml"/>
+				</p:submenu>
+				<p:submenu label="Fornecedor">
+					<p:menuitem value="Novo Fornecedor" url="/sistema/cadastro/fornecedor/formularioFornecedor.xhtml"/>
+					<p:menuitem value="Consultar Fornecedor" url="/sistema/cadastro/fornecedor/pesquisaFornecedor.xhtml"/>
+				</p:submenu>
+				<p:submenu label="Produto">
+					<p:menuitem value="Novo Produto" url="/sistema/cadastro/produto/formularioProduto.xhtml"/>
+					<p:menuitem value="Consultar Produto" url="/sistema/cadastro/produto/pesquisaProduto.xhtml"/>
+				</p:submenu>
+			</p:submenu>
+			<p:submenu label="Cotação" icon="ui-icon-pencil">
+				<p:menuitem value="Solicitação Cotação" url="cadastro/formularioSolicitacaoCotacao.xhtml"/>
+			</p:submenu>
+			<f:facet name="options"> 
+            	<p:commandButton type="button" value="Sair" icon="ui-icon-extlink"/>
+        	</f:facet>
+		</p:menubar>
+		<br/>
+	</ui:composition>
+
+</html>

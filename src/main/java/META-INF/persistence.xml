@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="cotacaowt" transaction-type="RESOURCE_LOCAL">
+		<class>br.com.gerenciador.cotacao.cadastro.bo.Produto</class>
+		<class>br.com.gerenciador.cotacao.generico.bo.GenericoBO</class>
+		<class>br.com.gerenciador.cotacao.cadastro.bo.Fornecedor</class>
+		<class>br.com.gerenciador.cotacao.cadastro.bo.Cidade</class>
+		<class>br.com.gerenciador.cotacao.cadastro.bo.Usuario</class>
+		<class>br.com.gerenciador.cotacao.cotacao.bo.Cotacao</class>
+		<class>br.com.gerenciador.cotacao.cotacao.bo.ItemProduto</class>
+		<class>br.com.gerenciador.cotacao.cotacao.bo.SolicitacaoCotacao</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/cotacaowt"/>
+			<property name="javax.persistence.jdbc.user" value="adminGPsTT6z"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="hibernate.show_sql" value="true" />
+  			<property name="hibernate.format_sql" value="true" />
+  			<property name="hibernate.hbm2ddl.auto" value="update" />
+  			<property name="javax.persistence.jdbc.password" value="eerVw3aY_bYs"/> 
+		</properties>
+	</persistence-unit>
+</persistence>
