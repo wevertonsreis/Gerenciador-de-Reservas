@@ -5,15 +5,19 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
-	<ui:composition template="../resources/template/layout.xhtml">
-	<ui:define name="content">
+	<ui:composition template="../../resources/template/layout.xhtml">
+		<ui:define name="content">
 		<h:form>
-			<p:panel header="Home">
-				<h3>Bem Vindo!</h3>
-				<p>Aqui são apresentadas informações das novas funcionalidades do sistema.</p>
-			</p:panel>
+		<p:panel header="Consulta de Reserva">
+			<h:panelGrid columns="2">
+				<h:outputText value="Nome" />
+				<p:inputText></p:inputText>
+			</h:panelGrid>
+			<f:facet name="footer">
+				<p:commandButton value="Pesquisar"/>
+			</f:facet>
+		</p:panel>
 		</h:form>	
-	</ui:define>	
+		</ui:define>	
 	</ui:composition>
-
 </html>

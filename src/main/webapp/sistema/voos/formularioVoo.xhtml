@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="../../resources/template/layout.xhtml">
+		<ui:define name="content">
+		<f:metadata>
+			<o:viewParam name="id" value="#{formularioVooMB.voo}"/>
+			<f:event listener="#{formularioVooMB.preparaFormulario()}" type="preRenderView"/>
+		</f:metadata>
+		<h:form>
+		<p:panel header="Formulário de Voo" id="panelVoo">
+			<p:messages globalOnly="true" showDetail="true" showSummary="true" closable="true">
+				<p:effect type="pulsate" event="load" />
+			</p:messages>
+			<h:panelGrid columns="3" cellspacing="3" cellpadding="3">
+				<p:outputLabel value="Número" for="numeroVoo"/>
+				<p:inputText value="#{formularioVooMB.voo.numero}" id="numeroVoo" required="true"/>
+				<p:messages for="numeroVoo"/>
+				
+				<p:outputLabel value="Origem" for="origemVoo"/>
+				<p:inputText value="#{formularioVooMB.voo.origem}" id="origemVoo" required="true"/>
+				<p:messages for="origemVoo"/>
+				
+				<p:outputLabel value="Destino" for="destinoVoo"/>
+				<p:inputText value="#{formularioVooMB.voo.destino}" id="destinoVoo" required="true"/>
+				<p:messages for="destinoVoo"/>
+				
+				<p:outputLabel value="Quantidade de Acentos" for="quantidadeAcentosVoo"/>
+				<p:spinner value="#{formularioVooMB.voo.acentosDisponiveis}" id="quantidadeAcentosVoo" required="true"/>
+				<p:messages for="quantidadeAcentosVoo"/>
+			</h:panelGrid>
+			<f:facet name="footer">
+				<p:commandButton value="Salvar" action="#{formularioVooMB.salvar()}" rendered="#{formularioVooMB.inclusao}" update="panelVoo"/>
+				<p:commandButton value="Atualizar" action="#{formularioVooMB.atualizar()}" rendered="#{formularioVooMB.edicao}" update="panelVoo"/>
+			</f:facet>
+		</p:panel>
+		</h:form>	
+		</ui:define>	
+	</ui:composition>
+</html>

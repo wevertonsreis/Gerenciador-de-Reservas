@@ -1,19 +1,14 @@
 @CHARSET "UTF-8";
 
 .ui-widget {
-	font-size: 70%;
+	font-size: 80%;
 }
 
-.topo {
-	z-index: 20 !important;
-	border-radius: 0px !important;
-	border: 0px !important;
+.ui-layout-north {
+	z-index:20 !important;
+  	overflow:visible !important;
 }
 
-.topo.ui-layout-unit .ui-layout-unit-content {
-	overflow: visible !important;
-}
-
-.corpo {
-	border: 0px !important;
+.ui-layout-north .ui-layout-unit-content {
+	overflow:visible !important;
 }

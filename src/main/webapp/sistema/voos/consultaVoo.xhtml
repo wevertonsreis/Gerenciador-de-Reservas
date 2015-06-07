@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="../../resources/template/layout.xhtml">
+		<ui:define name="content">
+		<h:form>
+		<p:panel header="Consulta de Voo" id="panelPesquisa">
+			<p:messages id="menssagesVoo" globalOnly="true" showDetail="true" showSummary="true" closable="true">
+				<p:effect type="pulsate" event="load" />
+			</p:messages>
+			<h:panelGrid columns="2" cellspacing="5" cellpadding="5">
+				<h:outputText value="Número"/>
+				<p:inputText value="#{consultaVooMB.numeroVoo}"/>
+			</h:panelGrid>
+			<f:facet name="footer">
+				<p:commandButton value="Pesquisar" action="#{consultaVooMB.pesquisar()}" update="dataTableVoos, menssagesVoo"/>
+			</f:facet>
+		</p:panel>
+		<br/>
+		<p:dataTable value="#{consultaVooMB.listaDeVoo}" var="voo" id="dataTableVoos" paginator="true" paginatorPosition="bottom" rows="10" emptyMessage="Nenhum Resultado Encontrado">
+			<f:facet name="header">
+				<h:outputText value="Lista de Voos" />
+			</f:facet>
+			<p:column headerText="Número">
+				<h:outputText value="#{voo.numero}" />
+			</p:column>
+			<p:column headerText="Origem">
+				<h:outputText value="#{voo.origem}" />
+			</p:column>
+			<p:column headerText="Destino">
+				<h:outputText value="#{voo.destino}" />
+			</p:column>
+			<p:column headerText="Acentos Disponíveis">
+				<h:outputText value="#{voo.acentosDisponiveis}" />
+			</p:column>
+			<p:column headerText="Editar" style="width:55px;text-align: center;">
+				<p:button outcome="formularioVoo" icon="ui-icon-pencil">
+					<f:param name="id" value="#{voo.id}"/>
+				</p:button>
+			</p:column>
+			<p:column headerText="Remover" style="width:55px;text-align: center;">
+				<p:commandButton action="#{consultaVooMB.deletar(voo)}" update="dataTableVoos, @form:menssagesVoo" icon="ui-icon-trash">
+				</p:commandButton>
+			</p:column>
+		</p:dataTable>
+		</h:form>	
+		</ui:define>	
+	</ui:composition>
+</html>
